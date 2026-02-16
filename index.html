@@ -71,40 +71,40 @@
 
 			/* Wrapper anim bay lên (dùng transform riêng) */
 			.wish-wrapper {
-				position: absolute;
-				bottom: -3rem;
-				left: 50%;
-				transform: translateX(-50%) translateY(0);
-				opacity: 0;
-				pointer-events: none; /* bản thân wrapper không nhận sự kiện */
+    			position: absolute;
+    			bottom: -3rem;
+    			left: 50%;
+    			transform: translateX(-50%);
+    			opacity: 0;
+
+    			width: 100%;
+    			display: flex;
+    			justify-content: center;
+
+    			pointer-events: none;
 			}
 
 			/* Câu chúc màu hồng phát sáng, có thể xoay / thu phóng bằng tay */
 			.wish-text {
     			display: inline-block;
-    			font-size: clamp(0.8rem, 3.5vw, 1.1rem);
-    			padding: 0.4rem 0.9rem;
+
+    			font-size: clamp(14px, 4vw, 18px);
+    			padding: 8px 14px;
     			border-radius: 999px;
 
     			color: #ff9ad9;
-    			text-shadow:
-        		0 0 6px rgba(255, 105, 180, 0.9),
-        		0 0 18px rgba(255, 20, 147, 0.8);
+    			background: rgba(0, 0, 0, 0.4);
 
-    			background: rgba(0, 0, 0, 0.3);
-    			border: 1px solid rgba(255, 192, 203, 0.7);
+    			max-width: 85vw;   /* QUAN TRỌNG */
+    			width: fit-content;
 
-    			box-shadow:
-        		0 0 14px rgba(255, 105, 180, 0.7),
-        		0 0 32px rgba(255, 20, 147, 0.4);
+    			white-space: normal;
+    			word-wrap: break-word;
+    			overflow-wrap: break-word;
 
-    			max-width: 92vw;      /* KHÔNG BAO GIỜ vượt màn hình */
-   			word-break: break-word;
-    			white-space: normal;  /* cho phép xuống dòng */
     			text-align: center;
 
-    			transform-origin: center center;
-    			pointer-events: auto;
+    			box-sizing: border-box;
 			}
 
 			/* Responsive cho mobile */
@@ -113,13 +113,10 @@
 					font-size: 0.9rem; /* Tăng font-size một chút để đọc tốt hơn */
 					padding: 0.35rem 1rem; /* Tăng padding để có không gian hơn */
 					max-width: 92vw; /* Tăng max-width để hiển thị nhiều chữ hơn */
-					min-width: 200px; /* Đảm bảo chiều rộng tối thiểu */
 					white-space: normal; /* Cho phép xuống dòng trên mobile */
 					word-wrap: break-word;
 					word-break: break-word; /* Ngắt từ tốt hơn */
 					display: -webkit-box;
-					-webkit-line-clamp: 2; /* Giới hạn tối đa 2 dòng */
-					line-clamp: 2; /* Thuộc tính chuẩn */
 					-webkit-box-orient: vertical;
 					overflow: hidden;
 					text-overflow: ellipsis;
@@ -298,6 +295,16 @@
     		height: 100dvh;
 		}
 		html, body {
+    		width: 100%;
+    		max-width: 100%;
+    		overflow-x: hidden;
+	}
+
+		.container,
+		.stage-container,
+		.canvas-container {
+    		width: 100vw;
+    		max-width: 100vw;
     		overflow-x: hidden;
 		}
 
