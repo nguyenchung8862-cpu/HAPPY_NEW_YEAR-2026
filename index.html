@@ -432,25 +432,53 @@
 			}
 			/* ===== DESIGNER CREDIT ===== */
 			.designer-credit {
-    			position: fixed;
-    			bottom: 10px;
-    			left: 50%;
-    			transform: translateX(-50%);
-    			z-index: 9999;
+    		position: fixed;
+    		bottom: 20px;
+    		left: 50%;
+    		transform: translateX(-50%);
+    		z-index: 9999;
+    		text-align: center;
+    		font-family: 'Dancing Script', cursive;
+    		font-size: clamp(16px, 4vw, 22px);
+    		font-weight: 600;
+    		letter-spacing: 1px;
+    		color: #ffd700;
 
-    			font-size: 14px;
-    			font-family: 'Dancing Script', cursive;
+    		animation: glowText 2s infinite alternate, floatText 3s ease-in-out infinite;
+		}
 
-    			color: #ffffff;
-    			text-align: center;
+		/* Tên designer nhỏ hơn */
+		.designer-name {
+    		display: block;
+    		font-size: 14px;
+    		margin-top: 4px;
+    		color: #ffffffcc;
+		}
 
-    			text-shadow:
-        		0 0 6px rgba(255,255,255,0.8),
-        		0 0 12px rgba(255,105,180,0.8),
-        		0 0 20px rgba(255,20,147,0.6);
+		/* Phát sáng */
+		@keyframes glowText {
+    		0% {
+        	text-shadow:
+            	0 0 10px #ffd700,
+            	0 0 20px #ff8c00,
+            	0 0 40px #ff4500;
+    		}
+    		100% {
+        	text-shadow:
+            	0 0 20px #fff,
+            	0 0 40px #ff69b4,
+            	0 0 60px #ff1493;
+    		}
+		}
 
-    			pointer-events: none;
-    			user-select: none;
+		/* Nhẹ nhàng trôi lên xuống */
+		@keyframes floatText {
+    		0%, 100% {
+        	transform: translate(-50%, 0px);
+    		}
+    		50% {
+       		transform: translate(-50%, -6px);
+    		}
 		}
 	</style>
 		<meta name="msapplication-TileColor" content="#000000" />
@@ -641,7 +669,8 @@
 				setInterval(createFlower, 1000);
 		</script>
 			<div class="designer-credit">
-    			Designer by Thành Chung
-			</div>
+    	Nhấn vào màn hình 🎇 <br>
+    	<span class="designer-name">Designer by Thành Chung</span>
+	</div>
 	</body>
 </html>
